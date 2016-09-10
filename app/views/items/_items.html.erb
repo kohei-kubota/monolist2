@@ -5,10 +5,10 @@
         <div class="image">
           <div class="img-wrap">
             <% #TODO 商品画像 %>
-            <% if item['mediumImageUrls'][0]['imageUrl'].include?('noimage') %>
-              <%= image_tag( 'no-image.png' , alt: item['itemName']) %>
-            <% else %>
+            <% if item['imageFlag'] == 1 %>
               <%= image_tag( item['mediumImageUrls'][0]['imageUrl'].gsub('?_ex=128x128', '') , alt: item['itemName']) %>
+            <% else %>
+              <%= image_tag( 'no-image.png' , alt: item['itemName']) %>
             <% end %>
             
           </div>
@@ -30,6 +30,7 @@
                       :item_code => "have-#{item['itemCode']}",
                       :remote => true,
                       :method => :post %>
+
         </div>
       </div>
     <% end %>
