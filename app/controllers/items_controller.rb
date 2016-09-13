@@ -13,6 +13,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+    # カレントのアイテムに対してリレーションで取得する必要あり？
+    # relationship = current_user.following_relationships.find(params[:id])
+    # @user = relationship.followed
   end
 
   private
